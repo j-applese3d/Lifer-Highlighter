@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lifer Highlighter Options</title>
+    <style>
+        label, p, button {
+            font-size: 1.1rem;
+        }
+
+        td {
+            padding: 4px 12px;
+            vertical-align: top;
+        }
+
+        main {
+            padding: 16px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1100px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>Lifer Highlighter Options</h1>
+
+    <p>
+        Here you can configure a few options.
+        Remember to hit save after making your changes to have them apply.
+    </p>
+    <p>
+        <strong>Note:</strong> by loading
+        <a href="https://ebird.org/lifelist/world">https://ebird.org/lifelist/world</a>, your lifelist will
+        be copied automatically.
+    </p>
+    <p style="font-style: italic; font-size: 1rem;">
+        Hint: the URL has to match the pattern expected. If it doesn't match, the list will not be populated. So, click the
+        link above to make sure it works. To confirm that it worked, open this options page again and check that your lifelist shows up below.
+    </p>
+    <p>
+        You can also manually enter it below. (Use the "Download (csv)" option from My eBird to make this easier)
+    </p>
+
+    <hr>
+    <table style="margin-top: 16px;">
+        <tr>
+            <td><label for="lifer_color">Lifers (new birds) will be colored:</label></td>
+            <td><input type="color" id="lifer_color"></td>
+        </tr>
+        <tr>
+            <td><label for="nonlifer_color">Previously seen birds will be colored:</label></td>
+            <td><input type="color" id="nonlifer_color"></td>
+        </tr>
+        <tr>
+            <td><label for="lifelist">Your life list:</label></td>
+            <td>
+                <textarea id="lifelist" rows="20" cols="60"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <p id="status"></p>
+                <button id="save">Save</button>
+                <button id="reset">Reset Colors</button>
+            </td>
+        </tr>
+    </table>
+</main>
+
+<script src="options.js"></script>
+</body>
+</html>
