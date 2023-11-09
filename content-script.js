@@ -9,6 +9,8 @@ chrome.storage.local.get(["lifelist", "liferColor", "nonliferColor"]).then((resu
 	console.log("Loaded lifelist... Found", lifeList.length, "lifers");
 
 	const lifeListIsCodes = lifeList.length && /^[a-z]*\d*$/.test(lifeList[0]);
+	const liferColor = result.liferColor || '#0070b3';
+	const nonliferColor = result.nonliferColor || '#808080';
 
 	console.log("Lifelist is in codes?", lifeListIsCodes);
 
@@ -24,11 +26,11 @@ chrome.storage.local.get(["lifelist", "liferColor", "nonliferColor"]).then((resu
 	document.querySelectorAll('[data-species-code]').forEach(function (e) {
 		if (elemIsLifer(e)) {
 			// lifer
-			e.style.color = result.liferColor;
+			e.style.color = liferColor;
 			liferCount++;
 		} else {
 			// not a lifer.
-			e.style.color = result.nonliferColor;
+			e.style.color = nonliferColor;
 			notALiferCount++;
 		}
 	});
